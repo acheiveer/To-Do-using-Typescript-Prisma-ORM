@@ -58,17 +58,43 @@ A simple To-Do application built with TypeScript, Prisma ORM, PostgreSQL, Node.j
     ```env
     DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
     ```
-7. Define your data models in the `schema.prisma` file, and run the following commands to generate the Prisma Client and migrations:
+7. **Define your data models in the `schema.prisma` file, and run the following commands to generate the Prisma Client and migrations:**
 
-    - **Generate Migrations**: You have created a single schema file. You haven’t yet run the CREATE TABLE commands. To run those and create migration files, run:
+    - **Generate Migrations:** 
       ```bash
       npx prisma migrate dev --name Initialize_the_schema
       ```
-      Your DB should now have the updated schema. 'Initialize_the_schema' is the name of migration.
-      
-      💡 Check the `prisma/migrations` folder and check if you see anything interesting in there.
-8. Generate Prisma clients:
-    ```bash
-    npx prisma generate
-    ```
-    - This generates a new client for you, which you can use in your Node.js app.
+      This will create migration files and apply them to your database. 'Initialize_the_schema' is the name of the migration.
+
+    - **Generate Prisma clients:**
+      ```bash
+      npx prisma generate
+      ```
+      This generates a new client for you, which you can use in your Node.js app.
+
+
+
+
+### Backend Setup
+
+1. **Add Backend Dependencies:**
+
+    - **CORS (Cross-Origin Resource Sharing):**
+      ```bash
+      npm install cors @types/cors
+      ```
+
+    - **Zod for Validation:**
+      ```bash
+      npm install zod
+      ```
+
+    - **Bcrypt for Password Encryption and Decryption:**
+      ```bash
+      npm install bcrypt @types/bcrypt
+      ```
+
+    - **JSON Web Token (JWT) for Authentication:**
+      ```bash
+      npm install jsonwebtoken @types/jsonwebtoken
+      ```
